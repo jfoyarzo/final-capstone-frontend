@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import Investigator from './components/Investigator';
 import Main from './components/Main';
 import Registration from './components/Registration';
-import SignUp from './components/SignUp';
+import Login from './components/Login';
 import Investigators from './components/Investigators';
 import InvestigatorForm from './components/InvestigatorForm';
 import ReserveForm from './components/ReserveForm';
@@ -19,7 +19,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Registration />} />
         <Route path="/main" element={<Main />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<Login />} />
         <Route path="/investigators" element={<Investigators />} />
         <Route path="/investigators/:id" element={<Investigator />} />
         <Route path="/add_investigator" element={<InvestigatorForm />} />

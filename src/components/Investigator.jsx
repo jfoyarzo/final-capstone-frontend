@@ -2,11 +2,15 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Investigator = () => {
-  const navigate = useNavigate();
   const investigator = {
     name: 'placeholder name',
     description: 'placeholder description',
     photo: '',
+    id: 1,
+  };
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/coaches/${investigator.id}/reserve`);
   };
 
   const imgstyle = {
@@ -51,6 +55,7 @@ const Investigator = () => {
           </Link>
           <button
             className=""
+            onClick={handleClick}
             type="button"
           >
             Reserve Investigator

@@ -8,7 +8,50 @@ export const fetchInvestigators = createAsyncThunk('investigators/fetch', async 
 
 const initialState = {
   status: 'idle',
-  value: [],
+  value: [
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+    {
+      name: 'Dexters',
+      photo: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2',
+      description: 'lorem ipsum',
+      fee: 100,
+      rating: 5,
+    },
+  ],
 };
 
 const investigatorsSlice = createSlice({

@@ -7,7 +7,7 @@ import Investigator from './components/Investigator';
 import Main from './components/Main';
 import Registration from './components/Registration';
 import SignUp from './components/SignUp';
-import Investigators from './components/Investigators';
+import Investigators from './components/investigators/Investigators';
 import InvestigatorForm from './components/InvestigatorForm';
 import ReserveForm from './components/ReserveForm';
 import DeleteInvestigator from './components/DeleteInvestigator';

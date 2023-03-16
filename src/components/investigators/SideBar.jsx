@@ -2,7 +2,7 @@ import React from 'react';
 import {
   FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
 } from 'react-icons/fa';
-import { TiSocialGooglePlus } from 'react-icons/ti';
+import { TiSocialInstagram } from 'react-icons/ti';
 
 const SideBar = () => (
   <section className="side-bar">
@@ -14,11 +14,11 @@ const SideBar = () => (
     </ul>
 
     <ul className="social-icons">
-      <li><FaTwitter /></li>
-      <li><FaFacebookF /></li>
-      <li><TiSocialGooglePlus /></li>
-      <li><FaVimeoV /></li>
-      <li><FaPinterestP /></li>
+      <li><a href="https://www.twitter.com" aria-label="Twitter"><FaTwitter /></a></li>
+      <li><a href="https://www.facebook.com" aria-label="Facebook"><FaFacebookF /></a></li>
+      <li><a href="https://www.instagram.com" aria-label="Instagram"><TiSocialInstagram /></a></li>
+      <li><a href="https://www.vimeo.com" aria-label="Vimeo"><FaVimeoV /></a></li>
+      <li><a href="https://www.pinterest.com" aria-label="Pinterest"><FaPinterestP /></a></li>
     </ul>
     <footer>
       <p>

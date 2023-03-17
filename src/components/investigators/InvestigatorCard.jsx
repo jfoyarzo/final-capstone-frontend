@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
+import './InvestigatorCard.css';
 
 const InvestigatorCard = (props) => {
   const {

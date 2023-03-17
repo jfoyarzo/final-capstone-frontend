@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import investigatorsReducer from './redux/investigator/investigatorSlice';
+import investigatorsReducer from './investigator/investigatorSlice';
 
 const store = configureStore({
   reducer: {

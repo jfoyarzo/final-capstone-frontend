@@ -1,0 +1,114 @@
+.allCoaches {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.tile {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  width: 95%;
+  margin: 2% auto;
+  padding: 1%;
+}
+
+.tile1 {
+  display: flex;
+  overflow-y: hidden;
+}
+
+.oneCoach {
+  flex: 0 0 auto;
+  margin-right: 3%;
+  width: 33.3%;
+  text-align: center;
+  padding: 1%;
+  scroll-snap-align: start;
+}
+
+.head {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.coach_image {
+  width: 60%;
+}
+
+.coachImg {
+  width: 100%;
+}
+
+.coachName {
+  font-family: 'Playfair Display SC', serif;
+}
+
+.remove_coach {
+  margin-top: 5%;
+}
+
+.coachdesc {
+  font-family: 'Genos', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+.btn1 {
+  padding: 0.5% 1%;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background-color: red;
+}
+
+.Reservation {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.coachForm {
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  .allCoaches {
+    margin: 5%;
+  }
+
+  .tile {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3%;
+    height: 100%;
+  }
+
+  .oneCoach {
+    width: 100%;
+    margin: 3% 1%;
+    padding: 0;
+  }
+
+  .coachImg {
+    margin-bottom: 2%;
+    border-radius: 2%;
+  }
+
+  .coachForm {
+    margin-top: 20%;
+  }
+
+  .remove_coach {
+    margin-top: 40%;
+  }
+
+  .coach_page {
+    font-family: 'Roboto', sans-serif;
+  }
+}

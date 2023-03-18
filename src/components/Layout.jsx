@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 
 const RootLayout = () => (
   <div className="root-layout">
@@ -21,6 +21,7 @@ const RootLayout = () => (
         </li>
       </ul>
     </nav>
+    <Outlet />
   </div>
 );
 

@@ -1,15 +1,27 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import Navigation from './Navigation';
+import { NavLink } from 'react-router-dom';
 
-const Layout = (props) => (
-  <div className="layout">
-    <Navigation />
-    <main className="main">
-      { props.children }
-    </main>
+const RootLayout = () => (
+  <div className="root-layout">
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/investigators">Investigators</NavLink>
+        </li>
+        <li>
+          <NavLink to="/create-investigator">Add New Investigator</NavLink>
+        </li>
+        <li>
+          <NavLink to="/appointments">My Appointments</NavLink>
+        </li>
+        <li>
+          <NavLink to="/create-appointment">Book an Appointment</NavLink>
+        </li>
+        <li>
+          <NavLink to="/create-appointment">Book an Appointment</NavLink>
+        </li>
+      </ul>
+    </nav>
   </div>
 );
 
-export default Layout;
+export default RootLayout;

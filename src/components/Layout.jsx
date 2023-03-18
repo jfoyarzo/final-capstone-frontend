@@ -1,14 +1,14 @@
 import { Outlet, NavLink } from 'react-router-dom';
 
-const RootLayout = () => (
-  <div className="root-layout">
+const Layout = () => (
+  <div className="layout">
     <nav>
       <ul>
         <li>
           <NavLink to="/investigators">Investigators</NavLink>
         </li>
         <li>
-          <NavLink to="/create-investigator">Add New Investigator</NavLink>
+          <NavLink to="/create-investigator">Add an Investigator</NavLink>
         </li>
         <li>
           <NavLink to="/appointments">My Appointments</NavLink>
@@ -17,7 +17,7 @@ const RootLayout = () => (
           <NavLink to="/create-appointment">Book an Appointment</NavLink>
         </li>
         <li>
-          <NavLink to="/create-appointment">Book an Appointment</NavLink>
+          <NavLink to="/delete-investigator">Delete an Investigator</NavLink>
         </li>
       </ul>
     </nav>
@@ -25,4 +25,4 @@ const RootLayout = () => (
   </div>
 );
 
-export default RootLayout;
+export default Layout;

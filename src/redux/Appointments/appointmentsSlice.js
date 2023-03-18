@@ -15,7 +15,36 @@ export const deleteAppointment = createAsyncThunk('appointments/delete', async (
 
 const initialState = {
   status: 'idle',
-  value: [],
+  value: [
+    {
+      id: 1,
+      user_id: 2,
+      investigator: {
+        id: 1,
+        name: 'Harry Gator',
+        photo: 'http://example.com/avatar.jpg',
+        description: 'Highly resilient private investigator, has big mouth and teeth',
+        fee: 69.95,
+        rating: 5,
+      },
+      date: '2022-12-12T00:00:00.000Z',
+      city: 'Manhattan, NY',
+    },
+    {
+      id: 2,
+      user_id: 2,
+      investigator: {
+        id: 1,
+        name: 'Simon Gator',
+        photo: 'http://example.com/avatar.jpg',
+        description: 'Highly resilient private investigator, has big mouth and teeth',
+        fee: 69.95,
+        rating: 5,
+      },
+      date: '2022-05-07T00:00:00.000Z',
+      city: 'Austin, TX',
+    },
+  ],
 };
 
 const appointmentsSlice = createSlice({

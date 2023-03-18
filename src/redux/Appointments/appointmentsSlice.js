@@ -8,6 +8,11 @@ export const fetchAppointments = createAsyncThunk('appointments/fetch', async ()
   return data;
 });
 
+export const deleteAppointment = createAsyncThunk('appointments/delete', async (appointmentId) => {
+  await axios.delete(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/${appointmentId}`);
+  return appointmentId;
+});
+
 const initialState = {
   status: 'idle',
   value: [],
@@ -32,6 +37,19 @@ const appointmentsSlice = createSlice({
       .addCase(fetchAppointments.rejected, (state) => {
         const newState = { ...state, error: 'Error 404. Failed to fetch', loading: false };
         return newState;
+      })
+      .addCase(deleteAppointment.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(deleteAppointment.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.value = state.value.filter(
+          (appointment) => appointment.id !== parseInt(action.payload, 10),
+        );
+      })
+      .addCase(deleteAppointment.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });

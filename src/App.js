@@ -11,7 +11,7 @@ import Login from './components/Login';
 import InvestigatorForm from './components/InvestigatorForm';
 import ReserveForm from './components/ReserveForm';
 import DeleteInvestigator from './components/DeleteInvestigator';
-import Reservations from './components/Reservations';
+import Appointments from './components/appointments/Appointments';
 
 const App = () => (
   <BrowserRouter>
@@ -25,7 +25,7 @@ const App = () => (
         <Route path="/add_investigator" element={<InvestigatorForm />} />
         <Route path="/investigators/:id/reserve" element={<ReserveForm />} />
         <Route path="remove_investigator" element={<DeleteInvestigator />} />
-        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/appointments" element={<Appointments />} />
       </Routes>
     </Layout>
   </BrowserRouter>

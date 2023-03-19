@@ -1,15 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getUser } from '../redux/CurrentUser/CurrentUserSlice';
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleLogin = (e) => {
     e.preventDefault();
     const [email, password] = document.getElementById('form').elements;
-    console.log(email.value);
-    console.log(password.value);
     dispatch(getUser({ email: email.value, password: password.value }));
+    navigate('/');
   };
   return (
     <form id="form" onSubmit={handleLogin}>

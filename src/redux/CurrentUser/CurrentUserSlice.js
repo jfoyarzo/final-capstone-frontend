@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = [];
-const url = 'https://p-i-api.onrender.com/users/sign_in';
+const url = 'http://localhost:3001/users/sign_in';
 
 export const getUser = createAsyncThunk('currentUser/getUser', async (user) => {
   const response = await axios.post(url, {

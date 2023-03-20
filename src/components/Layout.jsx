@@ -3,14 +3,21 @@ import '../assets/stylesheets/nav.css';
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
 } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { Button } from 'react-bootstrap';
+import { signOutUser } from '../redux/CurrentUser/CurrentUserSlice';
 
 const Layout = () => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(signOutUser());
+  }
+
   const currentUser = useSelector((state) => state.userReducer);
   return (
     <div className="layout">
@@ -25,7 +32,7 @@ const Layout = () => {
           <li>
             <NavLink to="/app/investigators/:id/reserve">Book an Appointment</NavLink>
           </li>
-          <Button>Logout</Button>
+          <Button onClick={ handleLogout } variant="danger">Logout</Button>
           <hr />
           { currentUser.admin
           && (

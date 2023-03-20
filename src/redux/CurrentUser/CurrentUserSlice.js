@@ -36,7 +36,8 @@ const currentUserSlice = createSlice({
       return currentUser;
     });
     builder.addCase(getUser.rejected, (state, action) => {
-      console.log(action.error);
+      const currentUser = { error: action.error };
+      return currentUser;
     });
     builder.addCase(signUpUser.fulfilled, (state, action) => {
       const currentUser = action.payload;

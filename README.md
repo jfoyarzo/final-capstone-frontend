@@ -1,21 +1,16 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <h3><b>About the project</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 EveryCent ](#-everycent-)
+- [👴Private Investigator ](#private-investigator-)
   - [🛠 Built With ](#-built-with-)
-    - [Ruby on Rails ](#ruby-on-rails-)
+    - [RoR \& React ](#ror--react-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
+  - [� Link to the Back-End API app ](#-link-to-the-back-end-api-app-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -31,25 +26,25 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 EveryCent <a name="about-project"></a>
+# 👴Private Investigator <a name="about-project"></a>
 
-**EveryCent** helps you manage your daily expenses.
+**Private Investigators** is the ultimate solution for booking appointments with professional investigators. Our React app is designed to make the process of finding and booking an investigator as easy and seamless as possible. With a user-friendly interface and intuitive design, Private Investigators is the perfect tool for anyone in need of investigative services. Whether you're looking to uncover the truth about a cheating spouse, investigate a business partner, or simply need help with a personal matter, Private Investigators has got you covered. Try it out today and experience the power of our cutting-edge React app.
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Ruby on Rails <a name="tech-stack"></a>
+### RoR & React <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">RoR Views/Teplates</a></li>
+    <li><a href="https://react.dev/">ReactJS</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.rackservers.com/">Rack</a></li>
+    <li><a href="https://rubyonrails.org/">/Rails/Rack</a></li>
   </ul>
 </details>
 
@@ -64,9 +59,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Good Looking UI**
-- **Validatable and Confirmable Login/Signup Pages**
-- **Authorization and Authentication rules for all CRUD operations**
+- **User-friendly interface:** The app has a simple and intuitive design.
+- **Booking system:** The app allows users to book appointments with professional investigators.
+- **Professional investigators:** The app connects users with a network of professional investigators.
+- **Confidentiality:** The app ensures the confidentiality of all user information and case details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -74,7 +70,11 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- A live demo of the app: 👉 [EveryCent](https://warisapp.onrender.com/)
+- Here's the link for the live demo of the app:: 👉 [Private Investigators](https://pir.onrender.com/)
+
+## 🔗 Link to the Back-End API app <a name="link-to-back"></a>
+
+- [Private-Investigators-Back-End](https://github.com/jfoyarzo/final-capstone-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

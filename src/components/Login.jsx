@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getUser } from '../redux/CurrentUser/CurrentUserSlice';
 import Swal from 'sweetalert2';
+import { getUser } from '../redux/CurrentUser/CurrentUserSlice';
 
 const Login = () => {
   const currentUser = useSelector((state) => state.userReducer);
@@ -15,8 +15,8 @@ const Login = () => {
         icon: 'success',
         title: 'You are logged in!',
         showConfirmButton: false,
-        timer: 2000
-      })
+        timer: 2000,
+      });
       navigate('/');
     } else if (currentUser.error) {
       Swal.fire({
@@ -24,8 +24,8 @@ const Login = () => {
         icon: 'error',
         title: 'Invalid email or password',
         showConfirmButton: false,
-        timer: 2000
-      })
+        timer: 2000,
+      });
     }
   }, [currentUser, navigate]);
 

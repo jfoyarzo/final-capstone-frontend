@@ -1,4 +1,6 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchInvestigators = createAsyncThunk('investigators/fetch', async () => {
   const investigators = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/investigators`);
@@ -9,6 +11,12 @@ export const fetchInvestigators = createAsyncThunk('investigators/fetch', async 
 export const fetchInvestigator = createAsyncThunk('investigators/fetch', async (investigatorId) => {
   const investigator = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/investigators/${investigatorId}`);
   const data = await investigator.json();
+  return data;
+});
+
+export const createInvestigator = createAsyncThunk('investigator/create', async (investigator) => {
+  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/`, investigator);
+  const data = await newAppointment.json();
   return data;
 });
 
@@ -90,6 +98,10 @@ const investigatorsSlice = createSlice({
         const filteredState = state.value.filter((data) => data.id !== action.payload);
         const newState = { ...state, value: [...state.value, filteredState] };
         return newState;
+      })
+      .addCase(createInvestigator.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.value = [...state.value, action.payload];
       });
   },
 });

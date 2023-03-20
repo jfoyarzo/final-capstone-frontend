@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Investigator from './components/Investigator';
 import Main from './components/Main';
-import Registration from './components/Registration';
+import Welcome from './components/Welcome';
+import Signup from './components/Signup';
 import Login from './components/Login';
 import Investigators from './components/Investigators';
 import InvestigatorForm from './components/InvestigatorForm';
@@ -17,9 +18,10 @@ const App = () => (
   <BrowserRouter>
     <Layout>
       <Routes>
-        <Route path="/" element={<Registration />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/main" element={<Main />} />
         <Route path="/investigators" element={<Investigators />} />
         <Route path="/investigators/:id" element={<Investigator />} />
         <Route path="/add_investigator" element={<InvestigatorForm />} />

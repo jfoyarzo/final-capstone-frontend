@@ -8,6 +8,7 @@ import {
   FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
 } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
+import { Button } from 'react-bootstrap';
 
 const Layout = () => {
   const currentUser = useSelector((state) => state.userReducer);
@@ -24,6 +25,7 @@ const Layout = () => {
           <li>
             <NavLink to="/app/investigators/:id/reserve">Book an Appointment</NavLink>
           </li>
+          <Button>Logout</Button>
           <hr />
           { currentUser.admin
           && (

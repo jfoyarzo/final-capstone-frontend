@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Rating } from 'react-simple-star-rating';
 
 const Investigator = () => {
   const { id } = useParams();
@@ -47,9 +48,8 @@ const Investigator = () => {
           </div>
           <div className="">
             <p className="">Rating:</p>
-            <p>{investigator.rating}</p>
+            <Rating initialValue={investigator.rating} readonly="true" />
           </div>
-
           <Link className="" to="/investigators">
             <p className="">MORE INVESTIGATORS</p>
           </Link>

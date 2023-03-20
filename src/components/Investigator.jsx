@@ -46,8 +46,8 @@ const Investigator = () => {
             <p>Available</p>
           </div>
           <div className="">
-            <p className="">Origin:</p>
-            <p>Economics</p>
+            <p className="">Rating:</p>
+            <p>{investigator.rating}</p>
           </div>
 
           <Link className="" to="/investigators">

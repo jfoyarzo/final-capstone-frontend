@@ -168,9 +168,9 @@ Please follow the steps in the README file of the back-end app to get the APIs s
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Sign_out option**
-- [ ] **New Styles**
-- [ ] **Searching option**
+- [ ] **Real-time updates:** Implement real-time updates  to provide users with up-to-date information without needing to refresh the page.
+- [ ] **Integration with third-party services:** Integrate the app with third-party services like Google Maps, PayPal, or Stripe to provide additional functionality.
+- [ ] **Search functionality:** Implement a search feature that allows users to search for specific content within the app.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,7 +196,7 @@ If you like this project please give it stars on GitHub.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+Special thank to [Murat Korkmaz](https://www.behance.net/muratk) for providing the design guidelines.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,13 +204,15 @@ Original design idea by [Gregoire Vella on Behance](https://www.behance.net/greg
 
 ## ❓ FAQ <a name="faq"></a>
 
-- **What is this app about?**
+- **Is this app free to use?**
 
-  - This app is to help you categorize and list your daily expenses.
+  - Yes certainly, it is free to use this app.
 
-- **What are the technologies used building this app?**
+<br>
 
-  - Main technologies used in this app are (Ruby, Rails, and PostgreSQl)
+- **Is this app secure?**
+
+  - The app uses various security measures, such as encryption, authentication, and authorization, to protect user data and prevent unauthorized access.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -11,6 +11,7 @@ import InvestigatorForm from './components/investigators/InvestigatorForm';
 import ReserveForm from './components/ReserveForm';
 import DeleteInvestigator from './components/investigators/DeleteInvestigator';
 import Appointments from './components/appointments/Appointments';
+import ProtectedRoute from './utils/ProtectedRoute';
 
 const App = () => (
   <BrowserRouter>
@@ -18,7 +19,14 @@ const App = () => (
       <Route path="/" element={<Welcome />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/app/" element={<Layout />}>
+      <Route
+        path="/app/"
+        element={(
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+      )}
+      >
         <Route path="investigators" element={<Investigators />} />
         <Route path="investigators/:id" element={<Investigator />} />
         <Route path="add_investigator" element={<InvestigatorForm />} />

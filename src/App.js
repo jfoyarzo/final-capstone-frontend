@@ -6,13 +6,11 @@ import Investigator from './components/Investigator';
 import Main from './components/Main';
 import Welcome from './components/Welcome';
 import Signup from './components/Signup';
-import Registration from './components/Registration';
 import Investigators from './components/investigators/Investigators';
 import Login from './components/Login';
 import InvestigatorForm from './components/InvestigatorForm';
 import ReserveForm from './components/ReserveForm';
 import DeleteInvestigator from './components/DeleteInvestigator';
-import Reservations from './components/Appointments';
 import Appointments from './components/appointments/Appointments';
 
 const App = () => (

@@ -1,4 +1,3 @@
-
 import { Outlet, NavLink } from 'react-router-dom';
 import '../assets/stylesheets/nav.css';
 /* eslint-disable react/prop-types */

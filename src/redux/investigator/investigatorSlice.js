@@ -21,6 +21,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 1,
     },
     {
       name: 'Dexters',
@@ -28,6 +29,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 2,
     },
     {
       name: 'Dexters',
@@ -35,6 +37,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 3,
     },
     {
       name: 'Dexters',
@@ -42,6 +45,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 4,
     },
     {
       name: 'Dexters',
@@ -49,6 +53,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 5,
     },
     {
       name: 'Dexters',
@@ -56,6 +61,7 @@ const initialState = {
       description: 'lorem ipsum',
       fee: 100,
       rating: 5,
+      id: 6,
     },
   ],
 };

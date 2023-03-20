@@ -8,7 +8,7 @@ const store = configureStore({
   reducer: {
     investigators: investigatorsReducer,
     appointments: appointmentsReducer,
-    userReducer
+    userReducer,
   },
 });
 

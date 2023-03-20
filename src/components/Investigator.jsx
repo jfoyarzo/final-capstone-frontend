@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { BsFillArrowLeftSquareFill, BsCaretRight } from 'react-icons/bs';
+import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { Rating } from 'react-simple-star-rating';
 
 const Investigator = () => {
@@ -33,26 +33,26 @@ const Investigator = () => {
             <p>{investigator.description}</p>
           </div>
 
-          <div className="d-flex justify-content-around bg-body-secondary w-100 align-items-end">
+          <div className="d-flex justify-content-between bg-body-secondary w-100 align-items-end">
             <p className="mt-3 p-0">Investigator&apos;s Fee:</p>
             <p>{investigator.fee}</p>
           </div>
 
-          <div className="d-flex justify-content-around w-100 align-items-end">
+          <div className="d-flex justify-content-between w-100 align-items-end">
             <p className="mt-3 p-0">Duration:</p>
             <p>1 hour</p>
           </div>
-          <div className="d-flex justify-content-around bg-body-secondary w-100 align-items-end">
+          <div className="d-flex justify-content-between bg-body-secondary w-100 align-items-end">
             <p className="mt-3 p-0">Investigator Availability:</p>
             <p>Available</p>
           </div>
-          <div className="d-flex justify-content-around  w-100 align-items-end">
+          <div className="d-flex justify-content-between  w-100 align-items-center">
             <p className="mt-3 p-0">Rating:</p>
             <Rating initialValue={investigator.rating} readonly="true" />
           </div>
-          <Link className="text-dark text-decoration-none fs-5" to="/investigators">
-            <p className="d-inline">MORE INVESTIGATORS</p>
-            <BsCaretRight />
+          <Link className="text-dark text-decoration-none fs-6 align-items-center" to="/investigators">
+            <p className="d-inline font-weight-bold">MORE INVESTIGATORS</p>
+            <BiRightArrow />
           </Link>
           <button
             className="btn btn-success mt-3"
@@ -64,11 +64,11 @@ const Investigator = () => {
         </div>
       </div>
       <div className="d-flex justify-content-between px-3 w-100 mt-5">
-        <button onClick={() => navigate(-1)} className="btn px-3 btn-success" type="button">
-          {' '}
-          <BsFillArrowLeftSquareFill />
-          {' '}
-        </button>
+        <Link className="text-dark text-decoration-none fs-5" to="/investigators">
+          <button onClick={() => navigate(-1)} className="btn px-3 btn-success" type="button">
+            <BiLeftArrow />
+          </button>
+        </Link>
       </div>
     </div>
   );

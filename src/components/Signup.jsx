@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import { signUpUser } from '../redux/CurrentUser/CurrentUserSlice';
 import Swal from 'sweetalert2';
-
+import { signUpUser } from '../redux/CurrentUser/CurrentUserSlice';
 
 const Signup = () => {
   const currentUser = useSelector((state) => state.userReducer);
@@ -18,8 +17,8 @@ const Signup = () => {
         icon: 'success',
         title: 'Welcome, you are signed up and logged in!',
         showConfirmButton: false,
-        timer: 2000
-      })
+        timer: 2000,
+      });
       navigate('/');
     }
   }, [currentUser, navigate]);
@@ -27,14 +26,9 @@ const Signup = () => {
     e.preventDefault();
     const [name, email, password, passwordConf] = document.getElementById('form').elements;
     if (password.value !== passwordConf.value) {
-      Swal.fire({
-        position: 'top',
-        icon: 'error',
-        title: 'Passwords do not match',
-        showConfirmButton: false,
-        timer: 2000
-      })
-      return;
+      passwordConf.setCustomValidity("Passwords Don't Match");
+    } else {
+      passwordConf.setCustomValidity('');
     }
     dispatch(signUpUser({
       name: name.value,
@@ -45,24 +39,20 @@ const Signup = () => {
     setValidated(true);
   };
   return (
-    <Form noValidate validated={validated} id="form" onSubmit={handleSignup}>
+    <Form validated={validated} id="form" onSubmit={handleSignup}>
       <Form.Group className="mb-3">
         <Form.Label>Name</Form.Label>
         <Form.Control required type="text" name="name" />
-        <Form.Control.Feedback type="invalid">
-          Please enter a name between 2 and 100 characters.
-        </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control required type="email" name="email" />
       </Form.Group>
       <Form.Group className="mb-3">
-        <Form.Label>Password</Form.Label>
-        <Form.Control required type="password" name="password" />
-        <Form.Control.Feedback type="invalid">
-          Please enter a password of at least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 special character.
-        </Form.Control.Feedback>
+        <Form.Label>
+          Password (It should have at least 1 capital letter, 1 symbol, and 1 number)
+        </Form.Label>
+        <Form.Control required type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>Confirm Password</Form.Label>

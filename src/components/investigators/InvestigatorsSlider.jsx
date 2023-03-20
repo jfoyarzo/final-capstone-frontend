@@ -26,6 +26,7 @@ export default function InvestigatorsSlider() {
           <InvestigatorCard
             key={nanoid()}
             name={investigator.name}
+            id={investigator.id}
             image={investigator.photo}
             description={investigator.description}
           />

@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Investigator = () => {
   const { id } = useParams();
-  console.log(id);
-  const investigator = {
-    name: 'placeholder name',
-    description: 'placeholder description',
-    photo: '',
-    id: 1,
-  };
+  const investigator = useSelector(
+    (state) => state.investigators.value.filter((i) => i.id === parseInt(id, 10))[0],
+  );
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/coaches/${investigator.id}/reserve`);
+    navigate(`/investigators/${investigator.id}/reserve`);
   };
 
   const imgstyle = {
@@ -29,6 +26,7 @@ const Investigator = () => {
       <div className="">
         <div className="" style={imgstyle} />
         <div className="">
+          <img src={investigator.photo} alt="private detective profile" />
           <div className="text-center">
             <h4>{investigator.name}</h4>
             <p>{investigator.description}</p>

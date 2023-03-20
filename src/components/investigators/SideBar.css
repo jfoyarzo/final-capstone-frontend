@@ -1,17 +1,9 @@
 .side-bar {
-  /* position: fixed; */
-  /* top: 0;
-  left: 0; */
   width: 20%;
-  /* min-width: 200px; */
   height: 100vh;
   background-color: #fff;
   border-right: 1px solid #ccc;
-  /* z-index: 100;
-  overflow-y: auto;
-  overflow-x: hidden; */
   padding: 0 20px;
-  /* box-sizing: border-box; */
   -webkit-box-shadow: -2px 0 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: -2px 0 5px 0 rgba(0, 0, 0, 0.1);
   display: flex;

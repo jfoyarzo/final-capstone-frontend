@@ -34,7 +34,7 @@ const Investigator = () => {
 
           <div className="">
             <p className="">Investigator&apos;s Fee:</p>
-            <p>$500</p>
+            <p>{investigator.fee}</p>
           </div>
 
           <div className="">

@@ -11,7 +11,6 @@ export const getUser = createAsyncThunk('currentUser/getUser', async (user) => {
       password: user.password,
     },
   }, { withCredentials: true });
-  console.log(response);
   return response.data.data;
 });
 
@@ -23,7 +22,6 @@ export const signUpUser = createAsyncThunk('currentUser/signUpUser', async (user
       password: user.password,
     },
   }, { withCredentials: true });
-  console.log(response);
   return response.data.data;
 });
 
@@ -36,14 +34,16 @@ const currentUserSlice = createSlice({
       return currentUser;
     });
     builder.addCase(getUser.rejected, (state, action) => {
-      console.log(action.error);
+      const currentUser = { error: action.error };
+      return currentUser;
     });
     builder.addCase(signUpUser.fulfilled, (state, action) => {
       const currentUser = action.payload;
       return currentUser;
     });
     builder.addCase(signUpUser.rejected, (state, action) => {
-      console.log(action.error);
+      const currentUser = { error: action.error };
+      return currentUser;
     });
   },
 });

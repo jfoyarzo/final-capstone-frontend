@@ -10,13 +10,14 @@
     - [RoR \& React ](#ror--react-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
-  - [� Link to the Back-End API app ](#-link-to-the-back-end-api-app-)
+  - [🔗 Link to the Back-End API app ](#-link-to-the-back-end-api-app-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [✍ Author ](#-author-)
+    - [Run tests](#run-tests)
+  - [✍ Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
@@ -86,30 +87,30 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need to:
+In order to run this project you need to have:
 
-> Install Ruby </br>
-> Install PostgreSQL </br>
-> Install Rails
+> NodeJS </br>
+> npm (Node Package Manager) </br>
+> And a Code editor
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
- git clone https://github.com/iAmWaris97/budget-app.git
+ git https://github.com/jfoyarzo/final-capstone-frontend.git
 ```
 
 Move inside the directory:
 
 ```sh
- cd budget-app
+ cd final-capstone-frontend
 ```
 
 ### Install
 
 ```sh
- bundle install
+ npm install
 ```
 
 ### Usage
@@ -117,32 +118,51 @@ Move inside the directory:
 To run the project, execute the following commands:
 
 ```sh
- rails db:create
+ npm start
 ```
 
-```sh
- rails db:migrate
+### Run tests
+
+To run the tests, run the following command:
+
+```
+  npm test
 ```
 
-```sh
- rails server
-```
+And finally open the app on http://localhost:3000/
 
-Open the app on http://localhost:3000/
+🔔Note: This app consumes APIs that are built using Ruby on Rails in a different repository (Link provided above).
+Please follow the steps in the README file of the back-end app to get the APIs server up and running.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## ✍ Author <a name="authors"></a>
+## ✍ Authors <a name="authors"></a>
+
+**👨‍💻 Felipe Oyarzo**
+
+- GitHub: [@jfoyarzo](https://github.com/jfoyarzo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jorge-felipe-oyarzo-contreras)
+
+**👨‍💻Mátyás Gombos**
+
+- GitHub: [@MattGomb](https://github.com/MattGomb)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gombos-matyas/)
 
 **👨‍💻 Waris Haleem**
 
 - GitHub: [@iAmWaris97](https://github.com/iAmWaris97)
-- Twitter: [@iAmWaris97](https://twitter.com/iAmWaris97)
-- LinkedIn: [Waris Haleem](https://www.linkedin.com/in/waris-haleem/) 
+- LinkedIn: [Waris Haleem](https://www.linkedin.com/in/waris-haleem/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+**👨‍💻 Chris Clothier**
+- LinkedIn: [@chris](https://www.linkedin.com/in/crclothier/)
+- Github: [@chris](https://github.com/CRClothier)
+
+**👨‍💻 Emmanuel Orji-Ihuoma**
+
+- GitHub: [@emmiiorji](https://github.com/emmiiorji)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/orji-emmanuel)
 
 <!-- FUTURE FEATURES -->
 

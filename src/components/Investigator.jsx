@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const Investigator = () => {
+  const { id } = useParams();
+  console.log(id);
   const investigator = {
     name: 'placeholder name',
     description: 'placeholder description',

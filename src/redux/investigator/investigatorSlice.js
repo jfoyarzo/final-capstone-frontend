@@ -6,6 +6,12 @@ export const fetchInvestigators = createAsyncThunk('investigators/fetch', async 
   return data;
 });
 
+export const fetchInvestigator = createAsyncThunk('investigators/fetch', async (investigatorId) => {
+  const investigator = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/api/investigators/${investigatorId}`);
+  const data = await investigator.json();
+  return data;
+});
+
 const initialState = {
   status: 'idle',
   value: [
@@ -72,6 +78,11 @@ const investigatorsSlice = createSlice({
       })
       .addCase(fetchInvestigators.rejected, (state) => {
         const newState = { ...state, error: 'Error 404. Failed to fetch', loading: false };
+        return newState;
+      })
+      .addCase(fetchInvestigator.fulfilled, (state, action) => {
+        const filteredState = state.value.filter((data) => data.id !== action.payload);
+        const newState = { ...state, value: [...state.value, filteredState] };
         return newState;
       });
   },

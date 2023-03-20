@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Investigator from './components/investigators/Investigator';
-import Welcome from './redux/investigator/Welcome';
+import Welcome from './components/Welcome';
 import Signup from './components/Signup';
 import Investigators from './components/investigators/Investigators';
 import Layout from './components/Layout';

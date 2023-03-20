@@ -1,0 +1,16 @@
+body {
+  font-family: 'Secular One', sans-serif;
+  color: #313131;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}

@@ -7,20 +7,3 @@
   margin: 0;
   padding: 0;
 }
-
-body {
-  font-family: 'Secular One', sans-serif;
-  color: #313131
-}
-
-li {
-  list-style: none;
-}
-
-ul {
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-}

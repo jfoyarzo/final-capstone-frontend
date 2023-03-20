@@ -14,8 +14,9 @@ export const deleteAppointment = createAsyncThunk('appointments/delete', async (
 });
 
 export const createAppointment = createAsyncThunk('appointments/create', async (appointment) => {
-  // const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, appointment);
-  return appointment;
+  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, appointment);
+  const data = await newAppointment.json();
+  return data;
 });
 
 const initialState = {

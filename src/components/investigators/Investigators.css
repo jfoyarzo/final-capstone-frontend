@@ -27,7 +27,6 @@
   align-items: center;
 }
 
-
 /* slider container styles */
 .slider {
   display: flex;
@@ -35,7 +34,6 @@
   justify-content: center;
   margin: 0 auto;
   max-width: 80vw;
-  /* overflow: hidden; */
 }
 
 /* slide styles */
@@ -52,7 +50,6 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-
 }
 
 .slider .slick-arrow:hover {

@@ -4,9 +4,9 @@ import { createAppointment } from '../../redux/Appointments/appointmentsSlice';
 
 const InvestigatorForm = () => {
   const [state, setState] = useState({
-    name: '',
+    name: 'loading..',
     photo: '',
-    description: '',
+    description: 'loading...',
     fee: 0,
     rating: 0,
   });

@@ -1,60 +1,55 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
+import { Rating } from 'react-simple-star-rating';
 
 const Investigator = () => {
-  const investigator = {
-    name: 'placeholder name',
-    description: 'placeholder description',
-    photo: '',
-    id: 1,
-  };
+  const { id } = useParams();
+  const investigator = useSelector(
+    (state) => state.investigators.value.filter((i) => i.id === parseInt(id, 10))[0],
+  );
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/coaches/${investigator.id}/reserve`);
-  };
-
-  const imgstyle = {
-    backgroundImage: `url(${investigator.photo})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    navigate(`/investigators/${investigator.id}/reserve`);
   };
 
   return (
     <div
-      className=""
+      className="d-flex flex-column justify-content-center align-items-center"
       style={{ height: '100vh' }}
     >
-      <div className="">
-        <div className="" style={imgstyle} />
-        <div className="">
+      <div className="d-flex w-100 px-2">
+        <img className="mx-3 col-5" src={investigator.photo} alt="private detective profile" />
+        <div className="d-flex pb-3 px-2 flex-column align-items-end">
           <div className="text-center">
             <h4>{investigator.name}</h4>
             <p>{investigator.description}</p>
           </div>
 
-          <div className="">
-            <p className="">Investigator&apos;s Fee:</p>
-            <p>$500</p>
+          <div className="d-flex justify-content-between bg-body-secondary w-100 align-items-end">
+            <p className="mt-3 p-0">Investigator&apos;s Fee:</p>
+            <p>{investigator.fee}</p>
           </div>
 
-          <div className="">
-            <p className="">Duration:</p>
+          <div className="d-flex justify-content-between w-100 align-items-end">
+            <p className="mt-3 p-0">Duration:</p>
             <p>1 hour</p>
           </div>
-          <div className="">
-            <p className="">Investigator Availability:</p>
+          <div className="d-flex justify-content-between bg-body-secondary w-100 align-items-end">
+            <p className="mt-3 p-0">Investigator Availability:</p>
             <p>Available</p>
           </div>
-          <div className="">
-            <p className="">Origin:</p>
-            <p>Economics</p>
+          <div className="d-flex justify-content-between  w-100 align-items-center">
+            <p className="mt-3 p-0">Rating:</p>
+            <Rating initialValue={investigator.rating} readonly="true" />
           </div>
-
-          <Link className="" to="/investigators">
-            <p className="">MORE INVESTIGATORS</p>
+          <Link className="text-dark text-decoration-none fs-6 align-items-center" to="/investigators">
+            <p className="d-inline font-weight-bold">MORE INVESTIGATORS</p>
+            <BiRightArrow />
           </Link>
           <button
-            className=""
+            className="btn btn-success mt-3"
             onClick={handleClick}
             type="button"
           >
@@ -62,11 +57,12 @@ const Investigator = () => {
           </button>
         </div>
       </div>
-      <div className="">
-        <button onClick={() => navigate(-1)} className="" type="button">
-          {' '}
-          {' '}
-        </button>
+      <div className="d-flex justify-content-between px-3 w-100 mt-5">
+        <Link className="text-dark text-decoration-none fs-5" to="/investigators">
+          <button onClick={() => navigate(-1)} className="btn px-3 btn-success" type="button">
+            <BiLeftArrow />
+          </button>
+        </Link>
       </div>
     </div>
   );

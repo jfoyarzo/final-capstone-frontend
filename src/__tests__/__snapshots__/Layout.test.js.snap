@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the Layout Component It should match its snapshot 1`] = `
+<div
+  className="layout"
+>
+  <nav>
+    <ul>
+      <li>
+        <a
+          className=""
+          href="/investigators"
+          onClick={[Function]}
+        >
+          Investigators
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/add-investigator"
+          onClick={[Function]}
+        >
+          Add an Investigator
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/appointments"
+          onClick={[Function]}
+        >
+          My Appointments
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/add-appointment"
+          onClick={[Function]}
+        >
+          Book an Appointment
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/delete-investigator/:id"
+          onClick={[Function]}
+        >
+          Delete Investigator
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

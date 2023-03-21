@@ -17,7 +17,7 @@ const Login = () => {
         showConfirmButton: false,
         timer: 2000,
       });
-      navigate('/');
+      navigate('/app/investigators');
     } else if (currentUser.error) {
       Swal.fire({
         position: 'top',

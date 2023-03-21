@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { Rating } from 'react-simple-star-rating';
+import { fetchInvestigator } from '../../redux/investigators/investigatorSlice';
 
 const Investigator = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
+  useEffect(() => {
+    dispatch(fetchInvestigator(id));
+  }, [dispatch, id]);
   const investigator = useSelector(
-    (state) => state.investigators.value.filter((i) => i.id === parseInt(id, 10))[0],
+    (state) => state.investigators.detail,
   );
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/investigators/${investigator.id}/reserve`);
+    navigate(`/app/investigators/${investigator.id}/reserve`);
   };
 
   return (
@@ -44,7 +49,7 @@ const Investigator = () => {
             <p className="mt-3 p-0">Rating:</p>
             <Rating initialValue={investigator.rating} readonly="true" />
           </div>
-          <Link className="text-dark text-decoration-none fs-6 align-items-center" to="/investigators">
+          <Link className="text-dark text-decoration-none fs-6 align-items-center" to="/app/investigators">
             <p className="d-inline font-weight-bold">MORE INVESTIGATORS</p>
             <BiRightArrow />
           </Link>
@@ -58,7 +63,7 @@ const Investigator = () => {
         </div>
       </div>
       <div className="d-flex justify-content-between px-3 w-100 mt-5">
-        <Link className="text-dark text-decoration-none fs-5" to="/investigators">
+        <Link className="text-dark text-decoration-none fs-5" to="/app/investigators">
           <button onClick={() => navigate(-1)} className="btn px-3 btn-success" type="button">
             <BiLeftArrow />
           </button>

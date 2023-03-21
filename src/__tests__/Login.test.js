@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/store';
 import Login from '../components/Login';
 
-describe('Testing Signin Component', () => {
+describe('Testing Login Component', () => {
   let signin;
   beforeAll(async () => {
     signin = renderer

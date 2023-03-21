@@ -19,7 +19,7 @@ const Signup = () => {
         showConfirmButton: false,
         timer: 2000,
       });
-      navigate('/');
+      navigate('/app/investigators');
     }
   }, [currentUser, navigate]);
   const handleSignup = (e) => {

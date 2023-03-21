@@ -28,7 +28,7 @@ const initialState = {
       photo: 'https://res.cloudinary.com/emmii/image/upload/v1664549397/general/unisex-avatar_ksg8nn.jpg',
       description: 'lorem ipsum',
       fee: 100,
-      rating: 5,
+      rating: 4,
       id: 1,
     },
     {
@@ -44,7 +44,7 @@ const initialState = {
       photo: 'https://res.cloudinary.com/emmii/image/upload/v1664549397/general/unisex-avatar_ksg8nn.jpg',
       description: 'lorem ipsum',
       fee: 100,
-      rating: 5,
+      rating: 3,
       id: 3,
     },
     {
@@ -52,7 +52,7 @@ const initialState = {
       photo: 'https://res.cloudinary.com/emmii/image/upload/v1664549397/general/unisex-avatar_ksg8nn.jpg',
       description: 'lorem ipsum',
       fee: 100,
-      rating: 5,
+      rating: 4,
       id: 4,
     },
     {
@@ -68,7 +68,7 @@ const initialState = {
       photo: 'https://res.cloudinary.com/emmii/image/upload/v1664549397/general/unisex-avatar_ksg8nn.jpg',
       description: 'lorem ipsum',
       fee: 100,
-      rating: 5,
+      rating: 2,
       id: 6,
     },
   ],

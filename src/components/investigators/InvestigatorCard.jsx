@@ -11,11 +11,11 @@ const InvestigatorCard = (props) => {
   } = props;
   return (
     <>
-      <NavLink to={`/investigators/${id}`}>
+      <NavLink to={`/app/investigators/${id}`}>
         <img src={image} alt={name} />
       </NavLink>
       <div className="investigator-card__info">
-        <NavLink to={`/investigators/${id}`}>
+        <NavLink to={`/app/investigators/${id}`}>
           <h3>{name}</h3>
           <hr style={{ borderStyle: 'dotted', borderBottom: '1px solid black' }} />
           <p>{description}</p>

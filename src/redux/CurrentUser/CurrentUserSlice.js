@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -28,11 +29,11 @@ export const signUpUser = createAsyncThunk('currentUser/signUpUser', async (user
 });
 
 export const signOutUser = createAsyncThunk('currentUser/signOutUser', async () => {
- const response = await axios.delete(`${url}/sign_out`, { withCredentials: true });
- if (response.status === 200) {
-   localStorage.clear();
- }
- return response.data
+  const response = await axios.delete(`${url}/sign_out`, { withCredentials: true });
+  if (response.status === 200) {
+    localStorage.clear();
+  }
+  return response.data;
 });
 
 const currentUserSlice = createSlice({

@@ -8,7 +8,7 @@ import Investigators from './components/investigators/Investigators';
 import Layout from './components/Layout';
 import Login from './components/Login';
 import InvestigatorForm from './components/investigators/InvestigatorForm';
-import ReserveForm from './components/ReserveForm';
+import ReserveForm from './components/appointments/ReserveForm';
 import DeleteInvestigator from './components/investigators/DeleteInvestigator';
 import Appointments from './components/appointments/Appointments';
 import ProtectedRoute from './utils/ProtectedRoute';

@@ -14,12 +14,6 @@ const Investigator = () => {
     navigate(`/investigators/${investigator.id}/reserve`);
   };
 
-  // const imgstyle = {
-  //   backgroundImage: `url(${investigator.photo})`,
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  // };
-
   return (
     <div
       className="d-flex flex-column justify-content-center align-items-center"

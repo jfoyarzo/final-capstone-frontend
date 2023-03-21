@@ -3,18 +3,23 @@ import PropTypes from 'prop-types';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
 import './InvestigatorCard.css';
+import { NavLink } from 'react-router-dom';
 
 const InvestigatorCard = (props) => {
   const {
-    name, image, description, socials,
+    name, image, description, socials, id,
   } = props;
   return (
     <>
-      <img src={image} alt={name} />
+      <NavLink to={`/investigators/${id}`}>
+        <img src={image} alt={name} />
+      </NavLink>
       <div className="investigator-card__info">
-        <h3>{name}</h3>
-        <hr style={{ borderStyle: 'dotted', borderBottom: '1px solid black' }} />
-        <p>{description}</p>
+        <NavLink to={`/investigators/${id}`}>
+          <h3>{name}</h3>
+          <hr style={{ borderStyle: 'dotted', borderBottom: '1px solid black' }} />
+          <p>{description}</p>
+        </NavLink>
         <ul className="social-icons">
           <li><a href={socials.facebook} aria-label="Facebook"><FaFacebookF /></a></li>
           <li><a href={socials.twitter} aria-label="Twitter"><FaTwitter /></a></li>
@@ -35,6 +40,7 @@ InvestigatorCard.defaultProps = {
 
 InvestigatorCard.propTypes = {
   name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   socials: PropTypes.shape({

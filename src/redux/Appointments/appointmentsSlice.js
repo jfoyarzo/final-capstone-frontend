@@ -13,6 +13,12 @@ export const deleteAppointment = createAsyncThunk('appointments/delete', async (
   return appointmentId;
 });
 
+export const createAppointment = createAsyncThunk('appointments/create', async (appointment) => {
+  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, appointment);
+  const data = await newAppointment.json();
+  return data;
+});
+
 const initialState = {
   status: 'idle',
   value: [
@@ -79,6 +85,10 @@ const appointmentsSlice = createSlice({
       .addCase(deleteAppointment.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(createAppointment.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.value = [...state.value, action.payload];
       });
   },
 });

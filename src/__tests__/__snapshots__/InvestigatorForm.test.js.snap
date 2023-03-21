@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test adding new investigator Should match its snapshot 1`] = `
+<h1>
+  Investigator Form
+</h1>
+`;

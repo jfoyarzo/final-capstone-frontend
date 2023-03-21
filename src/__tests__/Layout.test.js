@@ -7,9 +7,9 @@ import store from '../redux/store';
 import Layout from '../components/Layout';
 
 describe('Testing the Layout Component', () => {
-  let root;
+  let layout;
   beforeAll(async () => {
-    root = renderer
+    layout = renderer
       .create(
         <Provider store={store}>
           <Router>
@@ -25,7 +25,7 @@ describe('Testing the Layout Component', () => {
   });
 
   it('It should match its snapshot', () => {
-    expect(root).toMatchSnapshot();
+    expect(layout).toMatchSnapshot();
   });
 
   it('It renders navigation links', () => {

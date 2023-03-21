@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createAppointment } from '../redux/Appointments/appointmentsSlice';
+import { createAppointment } from '../../redux/Appointments/appointmentsSlice';
 
 const InvestigatorForm = () => {
   const [state, setState] = useState({

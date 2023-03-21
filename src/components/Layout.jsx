@@ -32,7 +32,6 @@ const Layout = () => {
           <li>
             <NavLink to="/app/investigators/:id/reserve">Book an Appointment</NavLink>
           </li>
-          <Button onClick={handleLogout} variant="danger">Logout</Button>
           <hr />
           { currentUser.admin
           && (
@@ -45,6 +44,7 @@ const Layout = () => {
               </li>
             </>
           )}
+          <Button onClick={handleLogout} variant="danger">Logout</Button>
         </ul>
         <ul className="social-icons">
           <li><a href="https://www.twitter.com" aria-label="Twitter"><FaTwitter /></a></li>

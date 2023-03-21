@@ -16,7 +16,7 @@ const Layout = () => {
 
   const handleLogout = () => {
     dispatch(signOutUser());
-  }
+  };
 
   const currentUser = useSelector((state) => state.userReducer);
   return (
@@ -32,7 +32,7 @@ const Layout = () => {
           <li>
             <NavLink to="/app/investigators/:id/reserve">Book an Appointment</NavLink>
           </li>
-          <Button onClick={ handleLogout } variant="danger">Logout</Button>
+          <Button onClick={handleLogout} variant="danger">Logout</Button>
           <hr />
           { currentUser.admin
           && (

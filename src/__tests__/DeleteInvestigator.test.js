@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import DeleteInvestigator from '../components/DeleteInvestigator';
+import DeleteInvestigator from '../components/investigators/DeleteInvestigator';
 
 describe('RootLayout', () => {
   let deleteInvestigator;

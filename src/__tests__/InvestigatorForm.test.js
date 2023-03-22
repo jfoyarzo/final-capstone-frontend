@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import InvestigatorForm from '../components/InvestigatorForm';
+import InvestigatorForm from '../components/investigators/InvestigatorForm';
 
 describe('Test adding new investigator', () => {
   let addInvestigator;

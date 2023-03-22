@@ -14,43 +14,20 @@ export const deleteAppointment = createAsyncThunk('appointments/delete', async (
 });
 
 export const createAppointment = createAsyncThunk('appointments/create', async (appointment) => {
-  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, appointment);
-  const data = await newAppointment.json();
-  return data;
+  const response = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, {
+    appointment: {
+      date: appointment.date,
+      city: appointment.city,
+      user_id: appointment.user_id,
+      investigator_id: appointment.investigator_id,
+    },
+  }, { withCredentials: true });
+  return response.data;
 });
 
 const initialState = {
   status: 'idle',
-  value: [
-    {
-      id: 1,
-      user_id: 2,
-      investigator: {
-        id: 1,
-        name: 'Harry Gator',
-        photo: 'http://example.com/avatar.jpg',
-        description: 'Highly resilient private investigator, has big mouth and teeth',
-        fee: 69.95,
-        rating: 5,
-      },
-      date: '2022-12-12T00:00:00.000Z',
-      city: 'Manhattan, NY',
-    },
-    {
-      id: 2,
-      user_id: 2,
-      investigator: {
-        id: 1,
-        name: 'Simon Gator',
-        photo: 'http://example.com/avatar.jpg',
-        description: 'Highly resilient private investigator, has big mouth and teeth',
-        fee: 69.95,
-        rating: 5,
-      },
-      date: '2022-05-07T00:00:00.000Z',
-      city: 'Austin, TX',
-    },
-  ],
+  value: [],
 };
 
 const appointmentsSlice = createSlice({

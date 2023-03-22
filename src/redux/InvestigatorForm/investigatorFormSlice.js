@@ -2,20 +2,26 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const createInvestigator = createAsyncThunk('investigator/create', async (investigator) => {
-  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/`, investigator);
-  const data = await newAppointment.json();
-  return data.data;
+export const createInvestigator = createAsyncThunk('investigators/create', async (investigator) => {
+  const response = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/`, {
+    investigator: {
+      name: investigator.name,
+      photo: investigator.photo,
+      description: investigator.description,
+      fee: investigator.fee,
+      rating: investigator.rating,
+    },
+  }, { withCredentials: true });
+  return response.data;
 });
 
 const initialState = {
   status: 'idle',
   value: [],
-  detail: {},
 };
 
-const addInvestigatorsSlice = createSlice({
-  name: 'addInvestigators',
+const createInvestigatorsSlice = createSlice({
+  name: 'investigators',
   initialState,
   reducers: {
     loadInvestigators: (state, action) => {
@@ -33,4 +39,4 @@ const addInvestigatorsSlice = createSlice({
   },
 });
 
-export default addInvestigatorsSlice.reducer;
+export default createInvestigatorsSlice.reducer;

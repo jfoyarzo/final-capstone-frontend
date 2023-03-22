@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Card } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import { deleteInvestigator } from '../../redux/DeleteInvestigator/deleteInvestigatorSlice';
+import { fetchInvestigators } from '../../redux/investigators/investigatorSlice';
 
 const DeleteInvestigator = () => {
-  const investigators = useSelector((state) => state.investigators);
-
   const dispatch = useDispatch();
+  const investigatorsDelete = useSelector((state) => state.deleteInvestigatorSlice);
+  const investigators = useSelector((state) => state.investigators);
+  useEffect(() => {
+    if (investigatorsDelete.status === 'fullfilled') {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Investigator created successfully!',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      dispatch(fetchInvestigators());
+    }
+  }, [investigatorsDelete, dispatch]);
 
   const handleDelete = (e) => {
     dispatch(deleteInvestigator(e.target.id));

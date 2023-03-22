@@ -3,9 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchAppointments = createAsyncThunk('appointments/fetch', async () => {
-  const appointments = await axios.get(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments`);
-  const data = await appointments.json();
-  return data;
+  const response = await axios(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/`, { withCredentials: true });
+  return response.data;
 });
 
 export const deleteAppointment = createAsyncThunk('appointments/delete', async (appointmentId) => {
@@ -18,7 +17,6 @@ export const createAppointment = createAsyncThunk('appointments/create', async (
     appointment: {
       date: appointment.date,
       city: appointment.city,
-      user_id: appointment.user_id,
       investigator_id: appointment.investigator_id,
     },
   }, { withCredentials: true });

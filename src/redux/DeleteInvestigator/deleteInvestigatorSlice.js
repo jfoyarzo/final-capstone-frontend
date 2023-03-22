@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const deleteInvestigator = createAsyncThunk('investigators/delete', async (investigatorId) => {
-  await axios.delete(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/${investigatorId}`);
-  return investigatorId;
+  const response = await axios.delete(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/${investigatorId}`, { withCredentials: true });
+  return response.data;
 });
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const deleteInvestigatorSlice = createSlice({
-  name: 'investigators/delete',
+  name: 'investigatorsDelete',
   initialState,
   reducers: {
     loadInvestigator: (state, action) => {
@@ -24,17 +24,16 @@ const deleteInvestigatorSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(deleteInvestigator.pending, (state) => {
-        state.status = 'loading';
+        const newState = { ...state, status: 'loading' };
+        return newState;
       })
       .addCase(deleteInvestigator.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
+        const newState = { ...state, status: 'failed', error: action.error.message };
+        return newState;
       })
       .addCase(deleteInvestigator.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.value = state.value.filter(
-          (investigator) => investigator.id !== parseInt(action.payload, 10),
-        );
+        const newState = { ...state, status: 'fullfilled', message: action.payload };
+        return newState;
       });
   },
 });

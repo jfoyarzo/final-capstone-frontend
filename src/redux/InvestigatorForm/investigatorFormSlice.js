@@ -33,8 +33,8 @@ const createInvestigatorsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(createInvestigator.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.value = [...state.value, action.payload];
+        const newState = { ...state, status: 'succeeded', value: action.payload };
+        return newState;
       });
   },
 });

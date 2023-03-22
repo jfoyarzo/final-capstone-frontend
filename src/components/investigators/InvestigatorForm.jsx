@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { Form, Button } from 'react-bootstrap';
 import { createInvestigator } from '../../redux/InvestigatorForm/investigatorFormSlice';
+import { fetchInvestigators } from '../../redux/investigators/investigatorSlice';
 
 const InvestigatorForm = () => {
   const [state, setState] = useState({
@@ -13,12 +14,12 @@ const InvestigatorForm = () => {
     fee: 0,
     rating: 0,
   });
-  const investigators = useSelector((state) => state.investigators);
+  const cInvestigator = useSelector((state) => state.createInvestigatorsReducer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (investigators.status === 'succeeded') {
+    if (cInvestigator.status === 'succeeded') {
       Swal.fire({
         position: 'top',
         icon: 'success',
@@ -26,10 +27,10 @@ const InvestigatorForm = () => {
         showConfirmButton: false,
         timer: 2000,
       });
+      dispatch(fetchInvestigators());
       navigate('/app/investigators');
-      console.log(investigators.status);
     }
-  }, [investigators, navigate]);
+  }, [cInvestigator, navigate, dispatch]);
 
   const handleChange = (event, name) => {
     if (name === 'name' || name === 'photo' || name === 'description' || name === 'fee' || name === 'rating') {

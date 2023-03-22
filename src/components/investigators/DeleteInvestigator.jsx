@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteInvestigator } from '../../redux/DeleteInvestigator/deleteInvestigatorSlice';
 import { Button, Card } from 'react-bootstrap';
+import { deleteInvestigator } from '../../redux/DeleteInvestigator/deleteInvestigatorSlice';
 
 const DeleteInvestigator = () => {
   const investigators = useSelector((state) => state.investigators);

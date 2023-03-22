@@ -41,7 +41,7 @@ const Layout = () => {
           && (
             <>
               <li>
-                <NavLink to="/app/add-investigator">Add an Investigator</NavLink>
+                <NavLink to="/app/add_investigator">Add an Investigator</NavLink>
               </li>
               <li>
                 <NavLink to="/app/delete-investigator/:id">Delete Investigator</NavLink>

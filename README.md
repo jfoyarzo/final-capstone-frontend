@@ -98,7 +98,7 @@ In order to run this project you need to have:
 Clone this repository to your desired folder:
 
 ```sh
- git https://github.com/jfoyarzo/final-capstone-frontend.git
+ git clone https://github.com/jfoyarzo/final-capstone-frontend.git
 ```
 
 Move inside the directory:

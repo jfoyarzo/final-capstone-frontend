@@ -8,6 +8,10 @@ const DeleteInvestigator = () => {
 
   const dispatch = useDispatch();
 
+  const handleDelete = (e) => {
+    dispatch(deleteInvestigator(e.target.id));
+  };
+
   return (
     <div>
       <h1>Delete an Investigator</h1>

@@ -12,12 +12,6 @@ export const fetchInvestigator = createAsyncThunk('investigators/fetchInvestigat
   return response.data;
 });
 
-export const createInvestigator = createAsyncThunk('investigator/create', async (investigator) => {
-  const newAppointment = await axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/investigators/`, investigator);
-  const data = await newAppointment.json();
-  return data;
-});
-
 const initialState = {
   status: 'idle',
   value: [],
@@ -51,10 +45,6 @@ const investigatorsSlice = createSlice({
       .addCase(fetchInvestigator.fulfilled, (state, action) => {
         const newState = { ...state, detail: action.payload };
         return newState;
-      })
-      .addCase(createInvestigator.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.value = [...state.value, action.payload];
       });
   },
 });

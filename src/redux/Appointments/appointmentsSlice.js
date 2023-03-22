@@ -50,6 +50,10 @@ const appointmentsSlice = createSlice({
         const newState = { ...state, error: 'Error 404. Failed to fetch', loading: false };
         return newState;
       })
+      .addCase(fetchAppointments.fulfilled, (state, action) => {
+        const newState = { ...state, value: action.payload };
+        return newState;
+      })
       .addCase(deleteAppointment.pending, (state) => {
         state.status = 'loading';
       })

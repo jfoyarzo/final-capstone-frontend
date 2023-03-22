@@ -50,7 +50,7 @@ const Signup = () => {
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>
-          Password (It should have at least 1 capital letter, 1 symbol, and 1 number)
+          Password (at least 8 characters and cointaining 1 capital letter, 1 symbol, and 1 number)
         </Form.Label>
         <Form.Control required type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" />
       </Form.Group>

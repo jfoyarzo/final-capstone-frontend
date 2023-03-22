@@ -18,7 +18,7 @@ const DeleteInvestigator = () => {
       <div>
         {investigators.value.map((investigator) => (
           <Card key={investigator.id} className="d-flex flex-row justify-content-between m-4 p-4">
-            <img src={`${investigator.photo}`} alt="investigator" style={{maxHeight: "2rem"}} />
+            <img src={`${investigator.photo}`} alt="investigator" style={{ maxHeight: '2rem' }} />
             {investigator.name}
             <Button
               type="button"

@@ -26,7 +26,7 @@ const Appointments = () => {
         <tbody>
           {appointments.value.map((appointment) => (
             <tr key={nanoid()}>
-              <td>{appointment.investigator.name}</td>
+              <td>{appointment.investigator_id}</td>
               <td>{appointment.city}</td>
               <td>{appointment.date}</td>
               <td><button type="button" onClick={handleDelete} id={appointment.id}>Cancel</button></td>

@@ -8,7 +8,7 @@ export const fetchAppointments = createAsyncThunk('appointments/fetch', async ()
 });
 
 export const deleteAppointment = createAsyncThunk('appointments/delete', async (appointmentId) => {
-  await axios.delete(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/${appointmentId}`);
+  await axios.delete(`${process.env.REACT_APP_SERVER_BASE_URL}/v1/appointments/${appointmentId}`, { withCredentials: true });
   return appointmentId;
 });
 

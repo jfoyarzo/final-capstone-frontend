@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createAppointment } from '../../redux/Appointments/appointmentsSlice';
+import { createInvestigator } from '../../redux/InvestigatorForm/investigatorFormSlice';
 
 const InvestigatorForm = () => {
   const [state, setState] = useState({
-    name: 'loading..',
+    name: '',
     photo: '',
-    description: 'loading...',
+    description: '',
     fee: 0,
     rating: 0,
   });
@@ -21,8 +21,8 @@ const InvestigatorForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (state.date && state.text) {
-      dispatch(createAppointment({ investigator: state }));
+    if (state.name && state.photo && state.description && state.fee && state.rating) {
+      dispatch(createInvestigator({ investigator: state }));
     }
   };
 

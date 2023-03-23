@@ -5,11 +5,15 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { createAppointment } from '../../redux/Appointments/appointmentsSlice';
+import { fetchInvestigators } from '../../redux/investigators/investigatorSlice';
 
 const ReserveForm = () => {
   const { id } = useParams();
+  const initialValue = id === ':id' ? 'default' : parseInt(id, 10);
   const [state, setState] = useState({ date: '', city: '', investigator_id: id });
+  const [selected, setSelected] = useState(initialValue);
   const appointments = useSelector((state) => state.appointments);
+  const investigators = useSelector((state) => state.investigators.value);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,11 +28,15 @@ const ReserveForm = () => {
       });
       navigate('/app/appointments');
     }
-  }, [appointments, navigate]);
 
-  const currentUser = useSelector((state) => state.userReducer);
+    if (investigators.status !== 'fetched') {
+      dispatch(fetchInvestigators());
+    }
+  }, [appointments.status, investigators.status, navigate, dispatch]);
+
+  const currentUser = useSelector((state) => state.current_user);
   const handleChange = (event, name) => {
-    if (name === 'date' || name === 'city' || name === 'investigator_id') {
+    if (name === 'date' || name === 'city') {
       setState((state) => ({
         ...state,
         [name]: event.target.value,
@@ -43,7 +51,6 @@ const ReserveForm = () => {
     }
   };
 
-  const investigators = useSelector((state) => state.investigators.value);
   return (
     <div>
       <h1>Make an appointment</h1>
@@ -53,15 +60,17 @@ const ReserveForm = () => {
         <Form.Control type="text" value={currentUser.name} required disabled />
         <Form.Control type="date" value={state.date} required onChange={(e) => handleChange(e, 'date')} />
         <Form.Control type="text" value={state.city} required onChange={(e) => handleChange(e, 'city')} />
-        <Form.Select aria-label="Investigators list" defaultValue={state.investigator_id} onChange={(e) => handleChange(e, 'investigator_id')}>
+        <Form.Select aria-label="Investigators list" value={selected} onChange={(e) => handleChange(e, 'investigator_id')}>
+
           <option
-            value=":id"
+            value="default"
             disabled
             hidden
           >
             Select an Investigator
 
           </option>
+
           {investigators.map((i) => (
             <option
               key={nanoid()}

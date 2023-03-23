@@ -5,6 +5,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Form, Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { createAppointment } from '../../redux/Appointments/appointmentsSlice';
+
 const ReserveForm = () => {
   const { id } = useParams();
   const [state, setState] = useState({ date: '', city: '', investigator_id: id });

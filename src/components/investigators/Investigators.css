@@ -65,3 +65,7 @@
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
 }
+
+.slick-slide {
+  min-width: 1px;
+}

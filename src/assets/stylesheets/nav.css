@@ -23,15 +23,6 @@ li {
 }
 
 li:hover {
+  color: #fefefe !important;
   background-color: gray;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-a:hover {
-  color: white;
 }

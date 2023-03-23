@@ -42,6 +42,11 @@ const ReserveForm = () => {
         [name]: event.target.value,
       }));
     }
+
+    if (name === 'investigator_id') {
+      setState((state) => ({ ...state, investigator_id: event.target.value }));
+      setSelected(event.target.value);
+    }
   };
 
   const handleSubmit = (event) => {

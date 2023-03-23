@@ -24,7 +24,7 @@ const Appointments = () => {
   return (
     <div>
       <h1>Appointments</h1>
-      <table>
+      <table className="table table-light table-striped">
         <thead>
           <tr>
             <th>Investigator</th>
@@ -44,7 +44,7 @@ const Appointments = () => {
               </td>
               <td>{appointment.city}</td>
               <td>{appointment.date}</td>
-              <td><button type="button" onClick={handleDelete} id={appointment.id}>Cancel</button></td>
+              <td><button className="rounded-pill border border-white bg-primary text-white py-1 px-3" type="button" onClick={handleDelete} id={appointment.id}>Cancel</button></td>
             </tr>
           ))}
         </tbody>

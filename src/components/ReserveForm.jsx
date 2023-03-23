@@ -29,7 +29,7 @@ const ReserveForm = () => {
       <h1>Make an appointment</h1>
       <hr />
       <p>Our investigators are amazing, you need to book one now!!!</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} data-testid="form">
         <input type="date" value={state.date} required onChange={(e) => handleChange(e, 'date')} />
         <input type="text" value={state.text} required onChange={(e) => handleChange(e, 'text')} />
         <button type="submit">Submit</button>

@@ -28,7 +28,7 @@ const Layout = () => {
     <div className="layout">
       <nav className="navbar navbar-light bg-light flex-column">
         <img src={logo} alt="P.I. logo" style={{ height: '2rem', width: '2rem' }} className="my-4 border border-dark rounded-circle" />
-        <ul className="navbar-nav flex-column">
+        <ul className="navbar-nav flex-column fw-bold">
           <li className="nav-item">
             <NavLink to="/app/investigators" className="nav-link">Home</NavLink>
           </li>

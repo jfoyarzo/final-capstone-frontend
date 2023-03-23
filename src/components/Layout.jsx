@@ -2,17 +2,21 @@ import { Outlet, NavLink } from 'react-router-dom';
 import '../assets/stylesheets/nav.css';
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
 } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { Button } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { fetchInvestigators } from '../redux/investigators/investigatorSlice';
 import { signOutUser } from '../redux/CurrentUser/CurrentUserSlice';
 
 const Layout = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchInvestigators());
+  }, [dispatch]);
 
   const handleLogout = () => {
     dispatch(signOutUser());
@@ -37,7 +41,7 @@ const Layout = () => {
           && (
             <>
               <li>
-                <NavLink to="/app/add-investigator">Add an Investigator</NavLink>
+                <NavLink to="/app/add_investigator">Add an Investigator</NavLink>
               </li>
               <li>
                 <NavLink to="/app/delete-investigator/:id">Delete Investigator</NavLink>

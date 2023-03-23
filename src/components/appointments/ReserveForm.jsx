@@ -34,7 +34,7 @@ const ReserveForm = () => {
     }
   }, [appointments.status, investigators.status, navigate, dispatch]);
 
-  const currentUser = useSelector((state) => state.current_user);
+  const currentUser = useSelector((state) => state.userReducer);
   const handleChange = (event, name) => {
     if (name === 'date' || name === 'city') {
       setState((state) => ({

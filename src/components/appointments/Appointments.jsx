@@ -9,9 +9,13 @@ const Appointments = () => {
   const investigators = useSelector((state) => state.investigators);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAppointments());
-    dispatch(fetchInvestigators());
-  }, [dispatch]);
+    if (appointments.status !== 'fetched') {
+      dispatch(fetchAppointments());
+    }
+    if (investigators.status !== 'fetched') {
+      dispatch(fetchInvestigators());
+    }
+  }, [dispatch, appointments.status, investigators.status]);
 
   const handleDelete = (event) => {
     dispatch(deleteAppointment(event.target.id));
@@ -30,7 +34,7 @@ const Appointments = () => {
           </tr>
         </thead>
         {
-          investigators.status === 'fetched'
+          investigators.status === 'fetched' && appointments.status === 'fetched'
         && (
         <tbody>
           {appointments.value.map((appointment) => (
@@ -45,7 +49,6 @@ const Appointments = () => {
           ))}
         </tbody>
         )
-
         }
       </table>
     </div>

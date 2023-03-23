@@ -56,7 +56,7 @@ const appointmentsSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(deleteAppointment.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.status = 'deleted';
         state.value = state.value.filter(
           (appointment) => appointment.id !== parseInt(action.payload, 10),
         );

@@ -39,7 +39,9 @@ const investigatorsSlice = createSlice({
         return newState;
       })
       .addCase(fetchInvestigators.fulfilled, (state, action) => {
-        const newState = { ...state, value: action.payload };
+        const newState = {
+          ...state, value: action.payload, loading: false, status: 'fetched',
+        };
         return newState;
       })
       .addCase(fetchInvestigator.fulfilled, (state, action) => {

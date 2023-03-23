@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import userReducer from './CurrentUser/CurrentUserSlice';
-import investigatorsReducer from './investigator/investigatorSlice';
+import investigatorsReducer from './investigators/investigatorSlice';
 import appointmentsReducer from './Appointments/appointmentsSlice';
 import userReducer from './CurrentUser/CurrentUserSlice';
+import createInvestigatorsReducer from './InvestigatorForm/investigatorFormSlice';
+import deleteInvestigatorSlice from './DeleteInvestigator/deleteInvestigatorSlice';
 
 const store = configureStore({
   reducer: {
     investigators: investigatorsReducer,
     appointments: appointmentsReducer,
+    createInvestigatorsReducer,
+    deleteInvestigatorSlice,
     userReducer,
   },
 });

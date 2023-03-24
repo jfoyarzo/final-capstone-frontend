@@ -49,7 +49,7 @@ const appointmentsSlice = createSlice({
         return newState;
       })
       .addCase(fetchAppointments.fulfilled, (state, action) => {
-        const newState = { ...state, value: action.payload };
+        const newState = { ...state, value: action.payload, status: 'fetched' };
         return newState;
       })
       .addCase(deleteAppointment.pending, (state) => {

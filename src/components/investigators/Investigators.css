@@ -18,7 +18,8 @@
 }
 
 #investigators-container > p {
-  color: #dee2e6;
+  color: grey;
+  font-size: 1.5rem;
 }
 
 .slide-container {
@@ -40,7 +41,7 @@
 .slider .slick-slide img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 15rem;
 }
 
 .slider .slick-arrow {
@@ -68,4 +69,9 @@
 
 .slick-slide {
   min-width: 1px;
+  display: flex;
+}
+
+.slick-list {
+  height: 30rem;
 }

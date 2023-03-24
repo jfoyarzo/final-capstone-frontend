@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Investigator from './components/investigators/Investigator';
 import Welcome from './components/Welcome';

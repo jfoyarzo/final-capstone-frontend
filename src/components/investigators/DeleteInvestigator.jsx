@@ -27,7 +27,10 @@ const DeleteInvestigator = () => {
   };
 
   return (
-    <div>
+    <div style={{
+      height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center',
+    }}
+    >
       <h1>Delete an Investigator</h1>
       <div>
         {investigators.value.map((investigator) => (

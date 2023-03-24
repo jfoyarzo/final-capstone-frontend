@@ -10,23 +10,23 @@ const InvestigatorCard = (props) => {
     name, image, description, socials, id,
   } = props;
   return (
-    <>
+    <div className="investigator-card">
       <NavLink to={`/app/investigators/${id}`}>
         <img src={image} alt={name} />
       </NavLink>
       <div className="investigator-card__info">
-        <NavLink to={`/app/investigators/${id}`}>
+        <NavLink to={`/app/investigators/${id}`} className="d-flex flex-column align-items-center" style={{ textDecoration: 'none', color: 'black' }}>
           <h3>{name}</h3>
           <hr style={{ borderStyle: 'dotted', borderBottom: '1px solid black' }} />
           <p>{description}</p>
         </NavLink>
-        <ul className="social-icons">
+        <ul className="social-icons d-flex">
           <li><a href={socials.facebook} aria-label="Facebook"><FaFacebookF /></a></li>
           <li><a href={socials.twitter} aria-label="Twitter"><FaTwitter /></a></li>
           <li><a href={socials.instagram} aria-label="Instagram"><TiSocialInstagram /></a></li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

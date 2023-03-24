@@ -14,7 +14,7 @@ const DeleteInvestigator = () => {
       Swal.fire({
         position: 'top',
         icon: 'success',
-        title: 'Investigator created successfully!',
+        title: 'Investigator deleted successfully!',
         showConfirmButton: false,
         timer: 2000,
       });

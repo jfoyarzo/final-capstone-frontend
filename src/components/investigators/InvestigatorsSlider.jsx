@@ -8,7 +8,7 @@ import InvestigatorCard from './InvestigatorCard';
 import PrevArrow from './PrevArrow';
 import NextArrow from './NextArrow';
 
-export default function InvestigatorsSlider() {
+const InvestigatorsSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const investigators = useSelector((state) => state.investigators);
@@ -34,4 +34,6 @@ export default function InvestigatorsSlider() {
       </Slider>
     </div>
   );
-}
+};
+
+export default InvestigatorsSlider;

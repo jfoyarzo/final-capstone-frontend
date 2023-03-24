@@ -66,19 +66,21 @@ const ReserveForm = () => {
       }}
     >
       <div
-        className="d-flex flex-column justify-content-center align-items-center bg-primary opacity-75"
+        className="d-flex flex-column justify-content-center align-items-center opacity-75"
         style={{
           height: '100vh',
+          backgroundColor: '#97BF0F',
+          color: 'white',
         }}
       >
         <h1>Make an appointment</h1>
         <hr className="border border-2 w-25" />
         <p className="mb-5">Our investigators are amazing, you need to book one now!!!</p>
         <Form onSubmit={handleSubmit} className="row gap-3">
-          <Form.Control className="col rounded-pill border border-white bg-primary text-white py-3 px-3" type="text" value={currentUser.name} required disabled />
-          <Form.Control className="col rounded-pill border border-white bg-primary text-white py-3 px-3" type="date" value={state.date} required onChange={(e) => handleChange(e, 'date')} />
-          <Form.Control className="city-input col rounded-pill border border-white bg-primary text-white py-3 px-3" type="text" value={state.city} placeholder="City" required onChange={(e) => handleChange(e, 'city')} />
-          <Form.Select className="col rounded-pill border border-white bg-primary text-white py-3 px-3" aria-label="Investigators list" value={selected} onChange={(e) => handleChange(e, 'investigator_id')}>
+          <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} type="text" value={currentUser.name} required disabled />
+          <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} type="date" value={state.date} required onChange={(e) => handleChange(e, 'date')} />
+          <Form.Control className="city-input col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} type="text" value={state.city} placeholder="City" required onChange={(e) => handleChange(e, 'city')} />
+          <Form.Select className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} aria-label="Investigators list" value={selected} onChange={(e) => handleChange(e, 'investigator_id')}>
             <option
               value="default"
               disabled
@@ -95,10 +97,11 @@ const ReserveForm = () => {
               </option>
             ))}
           </Form.Select>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" className="rounded-pill border border-white" style={{ backgroundColor: 'white', color: '#97BF0F', fontWeight: 'bold' }}>Submit</Button>
         </Form>
       </div>
     </div>
   );
 };
+
 export default ReserveForm;

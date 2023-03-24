@@ -113,6 +113,12 @@ Move inside the directory:
  npm install
 ```
 
+### Setup the .env file
+
+>Navigate to the root directory and rename the ".env.example" file to ".env".
+
+The .env file is necessary inorder for the app to operate properly.
+
 ### Usage
 
 To run the project, execute the following commands:

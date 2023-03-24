@@ -29,7 +29,7 @@
 
 # 👴Private Investigator <a name="about-project"></a>
 
-**Private Investigators** is the ultimate solution for booking appointments with professional investigators. Our React app is designed to make the process of finding and booking an investigator as easy and seamless as possible. With a user-friendly interface and intuitive design, Private Investigators is the perfect tool for anyone in need of investigative services. Whether you're looking to uncover the truth about a cheating spouse, investigate a business partner, or simply need help with a personal matter, Private Investigators has got you covered. Try it out today and experience the power of our cutting-edge React app.
+**Private Investigators** is the ultimate solution for booking appointments with professional investigators. Our React app is designed to make the process of finding and booking an investigator as easy and seamless as possible. With a user-friendly interface and intuitive design, Private Investigators is the perfect tool for anyone in need of investigative services. Whether you're looking to investigate a business partner, or simply need help with a personal matter, Private Investigators has got you covered. Try it out today and experience the power of our cutting-edge React app.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -55,7 +55,7 @@
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 </details>
-<br>
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -98,7 +98,7 @@ In order to run this project you need to have:
 Clone this repository to your desired folder:
 
 ```sh
- git https://github.com/jfoyarzo/final-capstone-frontend.git
+ git clone https://github.com/jfoyarzo/final-capstone-frontend.git
 ```
 
 Move inside the directory:

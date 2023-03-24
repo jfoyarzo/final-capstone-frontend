@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Appoinments tests It should match its snapshot 1`] = `
+<div>
+  <h1>
+    Appointments
+  </h1>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Investigator
+        </th>
+        <th>
+          City
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Harry Gator
+        </td>
+        <td>
+          Manhattan, NY
+        </td>
+        <td>
+          2022-12-12T00:00:00.000Z
+        </td>
+        <td>
+          <button
+            id={1}
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Simon Gator
+        </td>
+        <td>
+          Austin, TX
+        </td>
+        <td>
+          2022-05-07T00:00:00.000Z
+        </td>
+        <td>
+          <button
+            id={2}
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

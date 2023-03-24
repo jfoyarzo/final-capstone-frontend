@@ -54,7 +54,7 @@ const Appointments = () => {
               </td>
               <td>{appointment.city}</td>
               <td>{(appointment.date).slice(0, 10)}</td>
-              <td><button className="rounded-pill border border-white bg-primary text-white py-1 px-3" type="button" onClick={handleDelete} id={appointment.id}>Cancel</button></td>
+              <td><button className="rounded-pill border border-white text-white py-1 px-3" type="button" onClick={handleDelete} id={appointment.id} style={{ backgroundColor: '#97BF0F' }}>Cancel</button></td>
             </tr>
           ))}
         </tbody>

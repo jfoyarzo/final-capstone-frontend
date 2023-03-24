@@ -41,6 +41,7 @@ const DeleteInvestigator = () => {
               type="button"
               id={investigator.id}
               onClick={handleDelete}
+              style={{ backgroundColor: '#97BF0F', border: 'none' }}
             >
               Delete
             </Button>

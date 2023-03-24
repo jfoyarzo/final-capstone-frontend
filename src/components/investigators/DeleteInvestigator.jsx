@@ -28,14 +28,14 @@ const DeleteInvestigator = () => {
 
   return (
     <div style={{
-      height: '100%', overflowY: 'auto', display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center',
+      height: '100%', overflow: 'auto', display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center',
     }}
     >
       <h1>Delete an Investigator</h1>
-      <div>
+      <div className="w-100 h-100 d-flex flex-wrap">
         {investigators.value.map((investigator) => (
-          <Card key={investigator.id} className="d-flex flex-row justify-content-between m-4 p-4">
-            <img src={`${investigator.photo}`} alt="investigator" style={{ maxHeight: '2rem' }} />
+          <Card key={investigator.id} className="d-flex flex-row align-items-center justify-content-between m-2 p-4" style={{ width: '32%', height: '20%' }}>
+            <img src={`${investigator.photo}`} alt="investigator" className="border border-dark rounded-circle" style={{ maxHeight: '6rem' }} />
             {investigator.name}
             <Button
               type="button"

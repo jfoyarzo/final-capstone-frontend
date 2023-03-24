@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import ReserveForm from '../components/ReserveForm';
+import ReserveForm from '../components/appointments/ReserveForm';
 
 describe('Testing add appoinment form', () => {
   const investigators = [

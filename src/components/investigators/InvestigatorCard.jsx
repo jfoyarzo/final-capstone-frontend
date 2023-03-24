@@ -12,7 +12,7 @@ const InvestigatorCard = (props) => {
   return (
     <div className="investigator-card">
       <NavLink to={`/app/investigators/${id}`}>
-        <img src={image} alt={name} />
+        <img src={image} alt={name} className="border border-dark rounded-circle" />
       </NavLink>
       <div className="investigator-card__info">
         <NavLink to={`/app/investigators/${id}`} className="d-flex flex-column align-items-center" style={{ textDecoration: 'none', color: 'black' }}>

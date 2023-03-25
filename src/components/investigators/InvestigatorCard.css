@@ -1,0 +1,22 @@
+.slider .slick-slide > div,
+.investigator-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 15rem;
+}
+
+.slider .social-icons > li > a {
+  color: #efefef;
+  padding: 8px;
+  border: 2px solid #efefef;
+  border-radius: 50%;
+}
+
+.investigator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}

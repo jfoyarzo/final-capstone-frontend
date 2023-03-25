@@ -1,19 +1,27 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import '../assets/stylesheets/nav.css';
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import { useSelector, useDispatch } from 'react-redux';
 import {
   FaTwitter, FaFacebookF, FaVimeoV, FaPinterestP,
 } from 'react-icons/fa';
 import { TiSocialInstagram } from 'react-icons/ti';
 import { Button } from 'react-bootstrap';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchInvestigators } from '../redux/investigators/investigatorSlice';
 import { signOutUser } from '../redux/CurrentUser/CurrentUserSlice';
 import logo from '../assets/images/logo.png';
 
 const Layout = () => {
+  const [opened, setOpened] = useState(false);
+
+  const closeHandler = () => {
+    setOpened(false);
+  };
+
+  const openHandler = () => {
+    setOpened(true);
+  };
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchInvestigators());
@@ -26,16 +34,16 @@ const Layout = () => {
   const currentUser = useSelector((state) => state.userReducer);
   return (
     <div className="layout">
-      <nav className="navbar navbar-light bg-light flex-column">
-        <img src={logo} alt="P.I. logo" style={{ height: '2rem', width: '2rem' }} className="my-4 border border-dark rounded-circle" />
-        <ul className="navbar-nav flex-column fw-bold">
-          <li className="nav-item">
+      <nav className="desktop-nav column">
+        <img src={logo} alt="P.I. logo" style={{ height: '2rem', width: '2rem' }} className="my-4" />
+        <ul className="column">
+          <li>
             <NavLink to="/app/investigators" className="nav-link">Home</NavLink>
           </li>
-          <li className="nav-item">
+          <li>
             <NavLink to="/app/appointments" className="nav-link">My Appointments</NavLink>
           </li>
-          <li className="nav-item">
+          <li>
             <NavLink to="/app/investigators/:id/reserve" className="nav-link">Book an Appointment</NavLink>
           </li>
           <hr />
@@ -63,12 +71,65 @@ const Layout = () => {
           <footer>
             <p className="fst-italic fw-light">
               <small>
-                &copy; 2023 Mátyás Gombos, Waris Haleem, Chris Clothier,
-                Felipe Oyarzo and Emmanuel Orji-Ihuoma
+                &copy; 2023 Mátyás, Waris, Chris,
+                Felipe and Emmanuel
               </small>
             </p>
           </footer>
         </div>
+      </nav>
+      <nav className="mobile-nav column">
+        {!opened && (
+        <button
+          className="hamburger column"
+          onClick={openHandler}
+          type="button"
+        >
+          <div className="line" />
+          <div className="line" />
+          <div className="line" />
+        </button>
+        )}
+
+        {opened && (
+          <button
+            className="close"
+            onClick={closeHandler}
+            type="button"
+          >
+            <div className="line1" />
+            <div className="line2" />
+          </button>
+        )}
+        {opened && (
+          <div className="overlay column">
+            <img className="desk-nav-logo" src={logo} alt="app-logo" />
+            <ul className="column">
+              <li>
+                <NavLink to="/app/investigators" className="nav-link" onClick={closeHandler}>Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/app/appointments" className="nav-link" onClick={closeHandler}>My Appointments</NavLink>
+              </li>
+              <li>
+                <NavLink to="/app/investigators/:id/reserve" className="nav-link" onClick={closeHandler}>Book an Appointment</NavLink>
+              </li>
+              <hr />
+              { currentUser.admin
+            && (
+              <>
+                <li className="nav-item">
+                  <NavLink to="/app/add_investigator" className="nav-link" onClick={closeHandler}>Add an Investigator</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/app/delete-investigator/:id" className="nav-link" onClick={closeHandler}>Delete Investigator</NavLink>
+                </li>
+              </>
+            )}
+              <Button onClick={handleLogout} variant="danger">Logout</Button>
+            </ul>
+          </div>
+        )}
       </nav>
       <Outlet />
     </div>

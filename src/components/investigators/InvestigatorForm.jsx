@@ -68,13 +68,13 @@ const InvestigatorForm = () => {
         <h1>Add an Investigator</h1>
         <hr className="border border-2 w-25" />
         <p className="mb-5">Use the following form to add a new investigator.</p>
-        <Form onSubmit={handleSubmit} className="row gap-3">
+        <Form onSubmit={handleSubmit} className="row gap-3" data-testid="form">
           <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} placeholder="Name" type="text" value={state.name} required onChange={(e) => handleChange(e, 'name')} />
           <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} placeholder="Photo link" type="text" value={state.photo} required onChange={(e) => handleChange(e, 'photo')} />
           <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} placeholder="Description" type="text" value={state.description} required onChange={(e) => handleChange(e, 'description')} />
           <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} placeholder="Fee" type="number" value={state.fee} required onChange={(e) => handleChange(e, 'fee')} />
           <Form.Control className="col rounded-pill border border-white text-white py-3 px-3" style={{ backgroundColor: '#97BF0F' }} placeholder="Rating" type="number" value={state.rating} required onChange={(e) => handleChange(e, 'rating')} />
-          <Button type="submit" className="rounded-pill border border-white" style={{ backgroundColor: 'white', color: '#97BF0F', fontWeight: 'bold' }}>Submit</Button>
+          <Button type="submit" className="rounded-pill border border-white" data-testid="add-btn" style={{ backgroundColor: 'white', color: '#97BF0F', fontWeight: 'bold' }}>Submit</Button>
         </Form>
       </div>
     </div>

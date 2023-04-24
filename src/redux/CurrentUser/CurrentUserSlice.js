@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = JSON.parse(sessionStorage.getItem('currentUser')) || {};
-const url = 'http://localhost:3001/users';
+const url = `${process.env.REACT_APP_SERVER_BASE_URL}/users`;
 
 export const getUser = createAsyncThunk('current_user/getUser', async (user) => {
   const response = await axios.post(`${url}/sign_in`, {

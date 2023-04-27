@@ -75,7 +75,7 @@
 
 ## 🔗 Link to the Back-End API app <a name="link-to-back"></a>
 
-- [Private-Investigators-Back-End](https://private-investigators-api.onrender.com)
+- [Private-Investigators-Back-End](https://github.com/emmiiorji/private-investigators-backend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
